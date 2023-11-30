@@ -41,7 +41,7 @@ class ProductCard extends StatelessWidget {
                 GestureDetector(
                   child: SizedBox(
                     child: Image.network(
-                      model!.fullImagePath,
+                      model!.productImage,
                       fit: BoxFit.cover,
                     ),
                     height: 100,

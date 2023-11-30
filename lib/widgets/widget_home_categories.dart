@@ -14,14 +14,14 @@ class HomeCategories extends ConsumerWidget {
       child: Column(
         children: [
           Padding(
-            padding: EdgeInsets.all(8.0),
-            child: Text(
+            padding: const EdgeInsets.all(8.0),
+            child: const Text(
               "All Categories",
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
             ),
           ),
           Padding(
-            padding: EdgeInsets.all(8.0),
+            padding: const EdgeInsets.all(8.0),
             child: _categoriesList(ref),
           )
         ],
@@ -95,7 +95,7 @@ class HomeCategories extends ConsumerWidget {
                     height: 50,
                     alignment: Alignment.center,
                     child: Image.network(
-                      data.fullImagePath,
+                      data.categoryImage,
                       height: 50,
                     ),
                   ),

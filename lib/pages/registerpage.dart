@@ -218,7 +218,7 @@ class _RegisterPageState extends State<RegisterPage> {
             hintColor: Colors.black.withOpacity(0.6),
             backgroundColor: Colors.grey.shade100,
             borderFocusColor: Colors.grey.shade200,
-            obscureText: true,
+            obscureText: hideConfirmPassword,
             suffixIcon: IconButton(
               onPressed: () {
                 setState(() {

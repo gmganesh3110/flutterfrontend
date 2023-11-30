@@ -45,7 +45,7 @@ class HomeSlider extends ConsumerWidget {
           .map((model) => Container(
                 decoration: BoxDecoration(
                   image: DecorationImage(
-                    image: NetworkImage(model.fullImagePath),
+                    image: NetworkImage(model.sliderImage),
                     fit: BoxFit.contain,
                   ),
                 ),
