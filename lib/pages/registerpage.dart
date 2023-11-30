@@ -255,7 +255,7 @@ class _RegisterPageState extends State<RegisterPage> {
                             "Grocery App",
                             "Registered Succfully",
                             "OK",
-                            (onPressed) {
+                            () {
                               Navigator.of(context).pop();
                               Navigator.pushNamedAndRemoveUntil(
                                   context, '/login', (route) => false);
@@ -269,7 +269,7 @@ class _RegisterPageState extends State<RegisterPage> {
                             "Grocery App",
                             "Email Already Exists",
                             "OK",
-                            (onPressed) {
+                            () {
                               Navigator.of(context).pop();
                             },
                           )

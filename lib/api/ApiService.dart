@@ -21,8 +21,9 @@ class ApiService {
       'limit': pageSize.toString(),
     };
 
-    var url = Uri.parse("https://flutterecom.onrender.com/api/category?" +
-        Uri.encodeQueryComponent(queryString.toString()));
+    var url = Uri.parse("https://flutterecom.onrender.com/api/category")
+        .replace(queryParameters: queryString);
+
     try {
       var response = await client.get(url, headers: requestHeaders);
 
@@ -58,8 +59,8 @@ class ApiService {
       queryString['sort'] = "-createdAt";
     }
 
-    var url = Uri.parse("https://flutterecom.onrender.com/api/product?" +
-        Uri.encodeQueryComponent(queryString.toString()));
+    var url = Uri.parse("https://flutterecom.onrender.com/api/product")
+        .replace(queryParameters: queryString);
 
     try {
       var response = await client.get(url, headers: requestHeaders);
@@ -148,8 +149,8 @@ class ApiService {
       'page': page.toString(),
       'limit': pageSize.toString(),
     };
-    var url = Uri.parse("https://flutterecom.onrender.com/api/slider?" +
-        Uri.encodeQueryComponent(queryString.toString()));
+    var url = Uri.parse("https://flutterecom.onrender.com/api/slider")
+        .replace(queryParameters: queryString);
     try {
       var response = await client.get(url, headers: requestHeaders);
       if (response.statusCode == 200) {
@@ -168,7 +169,7 @@ class ApiService {
       'Content-type': 'application/json',
     };
     var url =
-        Uri.parse("https://flutterecom.onrender.com/api/product/" + productId);
+        Uri.parse("https://flutterecom.onrender.com/api/product/${productId}");
     var response = await client.get(url, headers: requestHeaders);
     if (response.statusCode == 200) {
       var data = jsonDecode(response.body);
