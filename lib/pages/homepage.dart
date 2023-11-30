@@ -15,12 +15,7 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       body: Container(
         child: ListView(
-          children: [
-            HomeSlider(),
-            HomeCategories(),
-            HomeProduts(),
-            DashBoard()
-          ],
+          children: [HomeSlider(), HomeCategories(), HomeProduts()],
         ),
       ),
     );

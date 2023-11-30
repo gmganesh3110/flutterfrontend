@@ -16,7 +16,7 @@ class _LoginPageState extends State<LoginPage> {
   bool isAsyncCallProcess = false;
   String? password;
   String? email;
-  bool hidePassword = false;
+  bool hidePassword = true;
   bool isRemember = false;
   @override
   Widget build(BuildContext context) {
@@ -140,16 +140,16 @@ class _LoginPageState extends State<LoginPage> {
             hintColor: Colors.black.withOpacity(0.6),
             backgroundColor: Colors.grey.shade100,
             borderFocusColor: Colors.grey.shade200,
-            obscureText: true,
-            suffixIcon: IconButton(
-              onPressed: () {
-                setState(() {
-                  hidePassword = !hidePassword;
-                });
-              },
-              icon:
-                  Icon(hidePassword ? Icons.visibility_off : Icons.visibility),
-            ),
+            obscureText: hidePassword,
+            // suffixIcon: IconButton(
+            //   onPressed: () {
+            //     setState(() {
+            //       hidePassword = !hidePassword;
+            //     });
+            //   },
+            //   icon:
+            //       Icon(hidePassword ? Icons.visibility_off : Icons.visibility),
+            // ),
           ),
           const SizedBox(
             height: 20,

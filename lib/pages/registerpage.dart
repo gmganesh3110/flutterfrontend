@@ -18,8 +18,8 @@ class _RegisterPageState extends State<RegisterPage> {
   String? password;
   String? confirmPassword;
   String? email;
-  bool hidePassword = false;
-  bool hideConfirmPassword = false;
+  bool hidePassword = true;
+  bool hideConfirmPassword = true;
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -99,7 +99,7 @@ class _RegisterPageState extends State<RegisterPage> {
           FormHelper.inputFieldWidget(
             context,
             "fullName",
-            "fullName",
+            "Full Name",
             (onValidate) {
               if (onValidate.isEmpty) {
                 return "* Required";
@@ -179,16 +179,16 @@ class _RegisterPageState extends State<RegisterPage> {
             hintColor: Colors.black.withOpacity(0.6),
             backgroundColor: Colors.grey.shade100,
             borderFocusColor: Colors.grey.shade200,
-            obscureText: true,
-            suffixIcon: IconButton(
-              onPressed: () {
-                setState(() {
-                  hidePassword = !hidePassword;
-                });
-              },
-              icon:
-                  Icon(hidePassword ? Icons.visibility_off : Icons.visibility),
-            ),
+            obscureText: hidePassword,
+            // suffixIcon: IconButton(
+            //   onPressed: () {
+            //     setState(() {
+            //       hidePassword = !hidePassword;
+            //     });
+            //   },
+            //   icon:
+            //       Icon(hidePassword ? Icons.visibility_off : Icons.visibility),
+            // ),
           ),
           const SizedBox(
             height: 20,
@@ -201,6 +201,9 @@ class _RegisterPageState extends State<RegisterPage> {
               if (onValidate.isEmpty) {
                 return "* Required";
               }
+              // if (onValidate != password) {
+              //   return "Confirm  Password not Mathced";
+              // }
               return null;
             },
             (onSaved) {
@@ -219,16 +222,16 @@ class _RegisterPageState extends State<RegisterPage> {
             backgroundColor: Colors.grey.shade100,
             borderFocusColor: Colors.grey.shade200,
             obscureText: hideConfirmPassword,
-            suffixIcon: IconButton(
-              onPressed: () {
-                setState(() {
-                  hideConfirmPassword = !hideConfirmPassword;
-                });
-              },
-              icon: Icon(hideConfirmPassword
-                  ? Icons.visibility_off
-                  : Icons.visibility),
-            ),
+            // suffixIcon: IconButton(
+            //   onPressed: () {
+            //     setState(() {
+            //       hideConfirmPassword = !hideConfirmPassword;
+            //     });
+            //   },
+            //   icon: Icon(hideConfirmPassword
+            //       ? Icons.visibility_off
+            //       : Icons.visibility),
+            // ),
           ),
           const SizedBox(
             height: 20,
